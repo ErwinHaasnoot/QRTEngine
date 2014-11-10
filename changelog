@@ -1,4 +1,4 @@
------------------------ v16 Changelog - 3/11/2014 -----------------------------
+----------------------- v16 Changelog - 10/11/2014 -----------------------------
 
 Major Bug fixes:
 - Fixed fixation flash issue (where fixation stimulus disappeared for one frame)
@@ -8,10 +8,12 @@ Minor:
 - Slight styling issues fixed, where invisible elements were taking up padding
 - Fixed issue where stimulus id was not correctly being propagated through APIs to inner core loop
 - Stimulus Queue length was not properly being updated, causing issues when Init question is not first question in trial block
+- Answer option for stimuli are no longer hidden by default
 
 Enhancements:
 - Very low ITIs are now possible, fixing one of the major limitations mentioned in our QRTEngine paper!
     * ITI no longer bounded by server communication time, but by time it takes for respondents computer to parse HTML of website (resulting in ITI lower bounds of 50 ms, down from ~1000 ms)
+    * This is an option that needs to be turned on, as the solution is not risk-free, although we are in contact with Qualtrics about the actual risk of the solution
 - Fixation flash fix allows for different colour backgrounds as well (such as black, red, green, blue)
 - Added option to let QRTEngine automatically wait for images to load 
     * defined waitForImages parameter for Init question, if false, QRTEngine will not wait for image load. True by default.
